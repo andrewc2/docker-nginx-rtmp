@@ -1,8 +1,6 @@
 name: Publish DockerHub image
 
 on:
-  schedule:
-    - cron: '41 * * * *'
   push:
     branches:
       - 'main'
@@ -29,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: andrewc2/docker-nginx-rtmp
+          images: andrewc248/docker-nginx-rtmp-fork
 
       - name: Build and push
         uses: docker/build-push-action@v2
