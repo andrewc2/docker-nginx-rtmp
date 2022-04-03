@@ -142,6 +142,8 @@ RUN apk add --update \
   x264-dev \
   x265-dev
 
+RUN apk add --no-cache bash
+
 COPY --from=build-nginx /usr/local/nginx /usr/local/nginx
 COPY --from=build-ffmpeg /usr/local /usr/local
 COPY --from=build-ffmpeg /usr/lib/libfdk-aac.so.2 /usr/lib/libfdk-aac.so.2
